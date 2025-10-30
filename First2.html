@@ -1,64 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Leo's website</title>
+  <meta charset="UTF-8">
+  <title>Leo's website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      background-color: green;
+      color: red;
+      padding: 10px;
+    }
+
+    .top-right {
+      display: block;
+      margin-left: 20%;
+      margin-top: 10px;
+    }
+
+    .link-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .link-block {
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      display: block;
+    }
+
+    a {
+      display: block;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
-<h2 style="background-color: red;">Link helper</h2>
-<p>This website will help you find links</p>
-<p>Here are a few links: </p><br>
-<img src="Image_Amazon.png" width="200" height="200"></img><br>
-<a href="https://www.amazon.com/"> This is the link for Amazon</a><br>
-<img src="Image_Ebay.png" width="200" height="200"></img><br>
-<a href="https://www.ebay.fr/"> This is the link for ebay</a><br>
-<img src="Image_W3Schools.png" width="200" height="200"></img><br>
-<a href="https://www.w3schools.com/"> This is the link for W3Scholls</a><br>
-<img src="Image_OneCompiler.png" width="200" height="200"></img><br>
-<a href="https://onecompiler.com/"> This is the link for OneCompiler</a><br>
-<img src="Image_Microsoft.png" width="200" height="200"></img><br>
-<a href="https://www.microsoft.com/fr-fr/"> This is the link for Microsoft</a><br>
-<img src="Image_Github.png" width="200" height="200"></img><br>
-<a href="https://github.com/"> This is the link for Github</a><br>
-<img src="Image_VSCode.png" width="200" height="200"></img><br>
-<a href="https://code.visualstudio.com/download"> This is the link to download VS code</a><br>
-<img src="Image_Canva.png" width="200" height="200"></img><br>
-<a href="https://www.canva.com/fr_fr/?msockid=27560989f021647f0c971cfcf198654b"> This is the link for Canva</a><br>
-<img src="Image_Youtube.png" width="200" height="200"></img><br>
-<a href="https://www.youtube.com/"> This is the link for Youtube</a><br>
-<img src="Image_Google.png" width="200" height="200"></img><br>
-<a href="https://www.google.com/"> This is the link for Google</a><br>
-<img src="Image_Chatgpt.png" width="200" height="200"></img><br>
-<a href="https://chatgpt.com/"> This is the link for ChatGPT</a><br>
-<img src="Image_Reddit.png" width="200" height="200"></img><br>
-<a href="https://www.reddit.com/"> This is the link for Reddit</a><br>
-<img src="Image_Whatsapp.png" width="200" height="200"></img><br>
-<a href="https://www.whatsapp.com/"> This is the link for Whatsapp</a><br>
-<img src="Image_Wikipedia.png" width="200" height="200"></img><br>
-<a href="https://www.wikipedia.org/"> This is the link for Wikipedia</a><br>
-<img src="Image_Bing.png" width="200" height="200"></img><br>
-<a href="https://www.bing.com/"> This is the link for Bing</a><br>
-<img src="Image_Yahoo.png" width="200" height="200"></img><br>
-<a href="https://fr.yahoo.com/?p=us"> This is the link for Yahoo</a><br>
-<img src="Image_Yandex.png" width="200" height="200"></img><br>
-<a href="https://yandex.com/"> This is the link for Yandex</a><br>
-<img src="Image_Copilot.png" width="200" height="200"></img><br>
-<a href="https://m365.cloud.microsoft/"> This is the link for Microsoft Copilot M365</a><br>
-<img src="Image_Netflix.png" width="200" height="200"></img><br>
-<a href="https://www.netflix.com/fr/"> This is the link for Netflix</a><br>
-<img src="Image_Temu.png" width="200" height="200"></img><br>
-<a href="https://www.temu.com/"> This is the link for Temu</a><br>
-<img src="Image_Pinteresque.png" width="200" height="200"></img><br>
-<a href="https://fr.pinterest.com/"> This is the link for Pinterest</a><br>
-<img src="Image_Gemini.png" width="200" height="200"></img><br>
-<a href="https://gemini.google.com/"> This is the link for Gemini</a><br>
-<img src="Image_Wheather.png" width="200" height="200"></img><br>
-<a href="https://weather.com/fr-FR/temps/aujour/l/FRXX0076:1:FR?Goto=Redirected"> This is the link for Weather</a><br>
-<img src="Image_Duck.png" width="200" height="200"></img><br>
-<a href="https://duckduckgo.com/"> This is the link for Duckduckgo</a><br>
-<img src="Image_Zoom.png" width="150" height="150"></img><br>
-<a href="https://www.zoom.com/"> This is the link for Zoom</a><br>
-<img src="Image_Roblox.png" width="200" height="200"></img><br>
-<a href="https://www.roblox.com/fr"> This is the link for Roblox</a><br>
+
+  <h2>Link helper</h2>
+  <p><b>This website will help you find links.</p></b>
+  <p>Here are ~35 links:</p>
+
+  <div class="link-container">
+
+    <div class="link-block">
+      <img src="Image_Amazon.png" alt="Amazon">
+      <a href="https://www.amazon.com/">This is the link for Amazon</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Ebay.png" alt="Ebay">
+      <a href="https://www.ebay.fr/">This is the link for Ebay</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_W3Schools.png" alt="W3Schools">
+      <a href="https://www.w3schools.com/">This is the link for W3Schools</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_OneCompiler.png" alt="OneCompiler">
+      <a href="https://onecompiler.com/">This is the link for OneCompiler</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Microsoft.png" alt="Microsoft">
+      <a href="https://www.microsoft.com/fr-fr/">This is the link for Microsoft</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Github.png" alt="GitHub">
+      <a href="https://github.com/">This is the link for GitHub</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_VSCode.png" alt="VS Code">
+      <a href="https://code.visualstudio.com/download">This is the link to download VS Code</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Canva.png" alt="Canva">
+      <a href="https://www.canva.com/fr_fr/?msockid=27560989f021647f0c971cfcf198654b">This is the link for Canva</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Youtube.png" alt="YouTube">
+      <a href="https://www.youtube.com/">This is the link for YouTube</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Google.png" alt="Google">
+      <a href="https://www.google.com/">This is the link for Google</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Chatgpt.png" alt="ChatGPT">
+      <a href="https://chatgpt.com/">This is the link for ChatGPT</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Reddit.png" alt="Reddit">
+      <a href="https://www.reddit.com/">This is the link for Reddit</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Whatsapp.png" alt="WhatsApp">
+      <a href="https://www.whatsapp.com/">This is the link for WhatsApp</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Wikipedia.png" alt="Wikipedia">
+      <a href="https://www.wikipedia.org/">This is the link for Wikipedia</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Bing.png" class="top-right" alt="Bing">
+      <a href="https://www.bing.com/" class="top-right">This is the link for Bing</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Yahoo.png" class="top-right" alt="Yahoo">
+      <a href="https://fr.yahoo.com/?p=us" class="top-right">This is the link for Yahoo</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Yandex.png" class="top-right" alt="Yandex">
+      <a href="https://yandex.com/" class="top-right">This is the link for Yandex</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Copilot.png" class="top-right" alt="Microsoft Copilot">
+      <a href="https://m365.cloud.microsoft/" class="top-right">This is the link for Microsoft Copilot M365</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Netflix.png" class="top-right" alt="Netflix">
+      <a href="https://www.netflix.com/fr/" class="top-right">This is the link for Netflix</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Temu.png" class="top-right" alt="Temu">
+      <a href="https://www.temu.com/" class="top-right">This is the link for Temu</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Pinteresque.png" class="top-right" alt="Pinterest">
+      <a href="https://fr.pinterest.com/" class="top-right">This is the link for Pinterest</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Gemini.png" class="top-right" alt="Gemini">
+      <a href="https://gemini.google.com/" class="top-right">This is the link for Gemini</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Wheather.png" class="top-right" alt="Weather">
+      <a href="https://weather.com/fr-FR/temps/aujour/l/FRXX0076:1:FR?Goto=Redirected" class="top-right">This is the link for Weather</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Duck.png" class="top-right" alt="DuckDuckGo">
+      <a href="https://duckduckgo.com/" class="top-right">This is the link for DuckDuckGo</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Zoom.png" width="150" height="150" class="top-right" alt="Zoom">
+      <a href="https://www.zoom.com/" class="top-right">This is the link for Zoom</a>
+    </div>
+
+    <div class="link-block">
+      <img src="Image_Roblox.png" class="top-right" alt="Roblox">
+      <a href="https://www.roblox.com/fr" class="top-right">This is the link for Roblox</a>
+    </div>
+	
+	<div class="link-block">
+  <img src="Image_Blogger.png" class="top-right" alt="Blogger">
+  <a href="https://www.blogger.com/about/?bpli=1" class="top-right">This is the link for Blogger</a>
+</div>
+
+	<div class="link-block">
+  <img src="Image_Wordpress.png" class="top-right" alt="Wordpress">
+  <a href="https://wordpress.org/" class="top-right">This is the link for Wordpress</a>
+  </div>
+  
+  <div class="link-block">
+ <img src="Image_Apple.png" class="top-right" alt="Apple">
+ <a href="https://www.apple.com/" class="top-right">This is the link for Apple</a>
+ </div> 
+ 
+  <div class="link-block">
+ <img src="Image_Google_Support.png" class="top-right" alt="Google_Support">
+ <a href="https://support.google.com/" class="top-right">This is the link for Google Support</a>
+ </div>
+ 
+  <div class="link-block">
+ <img src="Image_Google_Docs.png" class="top-right" alt="Google_Docs">
+ <a href="https://docs.google.com/document/u/0/" class="top-right">This is the link for Google docs</a>
+ </div>
+ 
+  <div class="link-block">
+ <img src="Image_Cloudfare.png" class="top-right" alt="Cloudfare">
+ <a href="https://www.cloudflare.com/" class="top-right">This is the link for Cloudfare</a>
+ </div>
+ 
+  <div class="link-block">
+ <img src="Image_Google_Maps.png" class="top-right" alt="Google_Maps">
+ <a href="https://www.google.com/maps" class="top-right">This is the link for Google Maps</a>
+ </div>
+ 
+  <div class="link-block">
+ <img src="Image_Opera.png" class="top-right" alt="Opera">
+ <a href="https://www.opera.com/fr" class="top-right">This is the link for Opera</a>
+ </div>
+ 
+  <div class="link-block">
+ <img src="Image_Dropbox.png" class="top-right" alt="Dropbox">
+ <a href="https://www.dropbox.com/" class="top-right">This is the link for Dropbox</a>
+ </div>
+  </div> <!-- End of .link-container -->
+
 </body>
 </html>
-
