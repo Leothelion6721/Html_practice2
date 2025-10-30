@@ -6,226 +6,756 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     h2 {
       background-color: green;
       color: red;
       padding: 10px;
+      margin: 0;
     }
 
-    .top-right {
-      display: block;
-      margin-left: 20%;
-      margin-top: 10px;
+    .theme-bar {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #f0f0f0;
+      padding: 10px;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .theme-button {
+      padding: 10px 20px;
+      background-color: #ddd;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .theme-button:hover {
+      background-color: #bbb;
     }
 
     .link-container {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
+      padding: 20px;
+      gap: 20px;
     }
 
     .link-block {
+      width: 200px;
       margin-bottom: 20px;
-      margin-right: 20px;
+      text-align: center;
     }
 
     img {
       width: 200px;
       height: 200px;
       display: block;
+      margin: 0 auto;
     }
 
     a {
       display: block;
       margin-top: 5px;
+      text-decoration: none;
+      color: blue;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h2>Link helper</h2>
-  <p><b>This website will help you find links.</p></b>
-  <p>Here are ~35 links:</p>
+  <h2>Link Helper</h2>
+  <p style="padding: 10px;">Click a theme to explore related websites:</p>
+
+  <div class="theme-bar">
+    <button class="theme-button" onclick="filterLinks('all')">All</button>
+    <button class="theme-button" onclick="filterLinks('search')">Search Engines</button>
+    <button class="theme-button" onclick="filterLinks('social')">Social Media</button>
+    <button class="theme-button" onclick="filterLinks('dev')">Development Tools</button>
+    <button class="theme-button" onclick="filterLinks('shopping')">Shopping</button>
+    <button class="theme-button" onclick="filterLinks('streaming')">Streaming</button>
+    <button class="theme-button" onclick="filterLinks('ai')">AI & Productivity</button>
+    <button class="theme-button" onclick="filterLinks('news')">News & Media</button>
+    <button class="theme-button" onclick="filterLinks('education')">Education</button>
+    <button class="theme-button" onclick="filterLinks('finance')">Finance</button>
+    <button class="theme-button" onclick="filterLinks('gaming')">Gaming</button>
+    <button class="theme-button" onclick="filterLinks('travel')">Travel</button>
+    <button class="theme-button" onclick="filterLinks('email')">Email & Cloud</button>
+  </div>
 
   <div class="link-container">
 
-    <div class="link-block">
-      <img src="Image_Amazon.png" alt="Amazon">
-      <a href="https://www.amazon.com/">This is the link for Amazon</a>
-    </div>
-
-    <div class="link-block">
-      <img src="Image_Ebay.png" alt="Ebay">
-      <a href="https://www.ebay.fr/">This is the link for Ebay</a>
-    </div>
-
-    <div class="link-block">
-      <img src="Image_W3Schools.png" alt="W3Schools">
-      <a href="https://www.w3schools.com/">This is the link for W3Schools</a>
-    </div>
-
-    <div class="link-block">
-      <img src="Image_OneCompiler.png" alt="OneCompiler">
-      <a href="https://onecompiler.com/">This is the link for OneCompiler</a>
-    </div>
-
-    <div class="link-block">
-      <img src="Image_Microsoft.png" alt="Microsoft">
-      <a href="https://www.microsoft.com/fr-fr/">This is the link for Microsoft</a>
-    </div>
-
-    <div class="link-block">
-      <img src="Image_Github.png" alt="GitHub">
-      <a href="https://github.com/">This is the link for GitHub</a>
-    </div>
-
-    <div class="link-block">
-      <img src="Image_VSCode.png" alt="VS Code">
-      <a href="https://code.visualstudio.com/download">This is the link to download VS Code</a>
-    </div>
-
-    <div class="link-block">
-      <img src="Image_Canva.png" alt="Canva">
-      <a href="https://www.canva.com/fr_fr/?msockid=27560989f021647f0c971cfcf198654b">This is the link for Canva</a>
-    </div>
-
-    <div class="link-block">
-      <img src="Image_Youtube.png" alt="YouTube">
-      <a href="https://www.youtube.com/">This is the link for YouTube</a>
-    </div>
-
-    <div class="link-block">
+    <!-- Search Engines -->
+    <div class="link-block" data-theme="search">
       <img src="Image_Google.png" alt="Google">
-      <a href="https://www.google.com/">This is the link for Google</a>
+      <a href="https://www.google.com/">Google</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Chatgpt.png" alt="ChatGPT">
-      <a href="https://chatgpt.com/">This is the link for ChatGPT</a>
+    <div class="link-block" data-theme="search">
+      <img src="Image_Bing.png" alt="Bing">
+      <a href="https://www.bing.com/">Bing</a>
     </div>
 
-    <div class="link-block">
+    <div class="link-block" data-theme="search">
+      <img src="Image_Duck.png" alt="DuckDuckGo">
+      <a href="https://duckduckgo.com/">DuckDuckGo</a>
+    </div>
+
+    <div class="link-block" data-theme="search">
+      <img src="Image_Yahoo.png" alt="Yahoo">
+      <a href="https://fr.yahoo.com/">Yahoo</a>
+    </div>
+
+    <div class="link-block" data-theme="search">
+      <img src="Image_Yandex.png" alt="Yandex">
+      <a href="https://yandex.com/">Yandex</a>
+    </div>
+
+    <div class="link-block" data-theme="search">
+      <img src="https://via.placeholder.com/200?text=Baidu" alt="Baidu">
+      <a href="https://www.baidu.com/">Baidu</a>
+    </div>
+
+    <div class="link-block" data-theme="search">
+      <img src="https://via.placeholder.com/200?text=Ecosia" alt="Ecosia">
+      <a href="https://www.ecosia.org/">Ecosia</a>
+    </div>
+
+    <!-- Social Media -->
+    <div class="link-block" data-theme="social">
       <img src="Image_Reddit.png" alt="Reddit">
-      <a href="https://www.reddit.com/">This is the link for Reddit</a>
+      <a href="https://www.reddit.com/">Reddit</a>
     </div>
 
-    <div class="link-block">
+    <div class="link-block" data-theme="social">
       <img src="Image_Whatsapp.png" alt="WhatsApp">
-      <a href="https://www.whatsapp.com/">This is the link for WhatsApp</a>
+      <a href="https://www.whatsapp.com/">WhatsApp</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Wikipedia.png" alt="Wikipedia">
-      <a href="https://www.wikipedia.org/">This is the link for Wikipedia</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Pinteresque.png" alt="Pinterest">
+      <a href="https://fr.pinterest.com/">Pinterest</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Bing.png" class="top-right" alt="Bing">
-      <a href="https://www.bing.com/" class="top-right">This is the link for Bing</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Blogger.png" alt="Blogger">
+      <a href="https://www.blogger.com/about/?bpli=1">Blogger</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Yahoo.png" class="top-right" alt="Yahoo">
-      <a href="https://fr.yahoo.com/?p=us" class="top-right">This is the link for Yahoo</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Facebook.png" alt="Facebook">
+      <a href="https://www.facebook.com/">Facebook</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Yandex.png" class="top-right" alt="Yandex">
-      <a href="https://yandex.com/" class="top-right">This is the link for Yandex</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Instagram.png" alt="Instagram">
+      <a href="https://www.instagram.com/">Instagram</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Copilot.png" class="top-right" alt="Microsoft Copilot">
-      <a href="https://m365.cloud.microsoft/" class="top-right">This is the link for Microsoft Copilot M365</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Twitter" alt="Twitter/X">
+      <a href="https://twitter.com/">Twitter/X</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Netflix.png" class="top-right" alt="Netflix">
-      <a href="https://www.netflix.com/fr/" class="top-right">This is the link for Netflix</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_in.png" alt="LinkedIn">
+      <a href="https://www.linkedin.com/">LinkedIn</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Temu.png" class="top-right" alt="Temu">
-      <a href="https://www.temu.com/" class="top-right">This is the link for Temu</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_TikTok.png" alt="TikTok">
+      <a href="https://www.tiktok.com/">TikTok</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Pinteresque.png" class="top-right" alt="Pinterest">
-      <a href="https://fr.pinterest.com/" class="top-right">This is the link for Pinterest</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Snapchat.png" alt="Snapchat">
+      <a href="https://www.snapchat.com/">Snapchat</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Gemini.png" class="top-right" alt="Gemini">
-      <a href="https://gemini.google.com/" class="top-right">This is the link for Gemini</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Discord.png" alt="Discord">
+      <a href="https://discord.com/">Discord</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Wheather.png" class="top-right" alt="Weather">
-      <a href="https://weather.com/fr-FR/temps/aujour/l/FRXX0076:1:FR?Goto=Redirected" class="top-right">This is the link for Weather</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Telegram.png" alt="Telegram">
+      <a href="https://telegram.org/">Telegram</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Duck.png" class="top-right" alt="DuckDuckGo">
-      <a href="https://duckduckgo.com/" class="top-right">This is the link for DuckDuckGo</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Tumblr.png" alt="Tumblr">
+      <a href="https://www.tumblr.com/">Tumblr</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Zoom.png" width="150" height="150" class="top-right" alt="Zoom">
-      <a href="https://www.zoom.com/" class="top-right">This is the link for Zoom</a>
+    <div class="link-block" data-theme="social">
+      <img src="Image_Mastodon.png" alt="Mastodon">
+      <a href="https://joinmastodon.org/">Mastodon</a>
     </div>
 
-    <div class="link-block">
-      <img src="Image_Roblox.png" class="top-right" alt="Roblox">
-      <a href="https://www.roblox.com/fr" class="top-right">This is the link for Roblox</a>
+    <!-- Development Tools -->
+    <div class="link-block" data-theme="dev">
+      <img src="Image_Github.png" alt="GitHub">
+      <a href="https://github.com/">GitHub</a>
     </div>
-	
-	<div class="link-block">
-  <img src="Image_Blogger.png" class="top-right" alt="Blogger">
-  <a href="https://www.blogger.com/about/?bpli=1" class="top-right">This is the link for Blogger</a>
-</div>
 
-	<div class="link-block">
-  <img src="Image_Wordpress.png" class="top-right" alt="Wordpress">
-  <a href="https://wordpress.org/" class="top-right">This is the link for Wordpress</a>
+    <div class="link-block" data-theme="dev">
+      <img src="Image_VSCode.png" alt="VS Code">
+      <a href="https://code.visualstudio.com/download">VS Code</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_W3Schools.png" alt="W3Schools">
+      <a href="https://www.w3schools.com/">W3Schools</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_OneCompiler.png" alt="OneCompiler">
+      <a href="https://onecompiler.com/">OneCompiler</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_Stack_Overflow.png" alt="Stack Overflow">
+      <a href="https://stackoverflow.com/">Stack Overflow</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_GitLab.png" alt="GitLab">
+      <a href="https://gitlab.com/">GitLab</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_BitBucket.png" alt="Bitbucket">
+      <a href="https://bitbucket.org/">Bitbucket</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_Codepen.png" alt="CodePen">
+      <a href="https://codepen.io/">CodePen</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_JSFiddle.png" alt="JSFiddle">
+      <a href="https://jsfiddle.net/">JSFiddle</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_Replit.png" alt="Replit">
+      <a href="https://replit.com/">Replit</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_MDN_Web_Docs.png" alt="MDN Web Docs">
+      <a href="https://developer.mozilla.org/">MDN Web Docs</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_NPM.png" alt="npm">
+      <a href="https://www.npmjs.com/">npm</a>
+    </div>
+
+    <div class="link-block" data-theme="dev">
+      <img src="Image_Docker.png" alt="Docker Hub">
+      <a href="https://hub.docker.com/">Docker Hub</a>
+    </div>
+
+    <!-- Shopping -->
+    <div class="link-block" data-theme="shopping">
+      <img src="Image_Amazon.png" alt="Amazon">
+      <a href="https://www.amazon.com/">Amazon</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="Image_Ebay.png" alt="Ebay">
+      <a href="https://www.ebay.fr/">Ebay</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="Image_Temu.png" alt="Temu">
+      <a href="https://www.temu.com/">Temu</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="Image_AliExpress.png" alt="AliExpress">
+      <a href="https://www.aliexpress.com/">AliExpress</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="Image_Walmart.png" alt="Walmart">
+      <a href="https://www.walmart.com/">Walmart</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="https://via.placeholder.com/200?text=Target" alt="Target">
+      <a href="https://www.target.com/">Target</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="https://via.placeholder.com/200?text=Best+Buy" alt="Best Buy">
+      <a href="https://www.bestbuy.com/">Best Buy</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="https://via.placeholder.com/200?text=Etsy" alt="Etsy">
+      <a href="https://www.etsy.com/">Etsy</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="https://via.placeholder.com/200?text=Wish" alt="Wish">
+      <a href="https://www.wish.com/">Wish</a>
+    </div>
+
+    <div class="link-block" data-theme="shopping">
+      <img src="https://via.placeholder.com/200?text=Rakuten" alt="Rakuten">
+      <a href="https://www.rakuten.com/">Rakuten</a>
+    </div>
+
+    <!-- Streaming -->
+    <div class="link-block" data-theme="streaming">
+      <img src="Image_Youtube.png" alt="YouTube">
+      <a href="https://www.youtube.com/">YouTube</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="Image_Netflix.png" alt="Netflix">
+      <a href="https://www.netflix.com/fr/">Netflix</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=Twitch" alt="Twitch">
+      <a href="https://www.twitch.tv/">Twitch</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=Disney+" alt="Disney+">
+      <a href="https://www.disneyplus.com/">Disney+</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=Hulu" alt="Hulu">
+      <a href="https://www.hulu.com/">Hulu</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=Prime+Video" alt="Prime Video">
+      <a href="https://www.primevideo.com/">Prime Video</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=HBO+Max" alt="HBO Max">
+      <a href="https://www.max.com/">HBO Max</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=Spotify" alt="Spotify">
+      <a href="https://www.spotify.com/">Spotify</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=Apple+Music" alt="Apple Music">
+      <a href="https://music.apple.com/">Apple Music</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=SoundCloud" alt="SoundCloud">
+      <a href="https://soundcloud.com/">SoundCloud</a>
+    </div>
+
+    <div class="link-block" data-theme="streaming">
+      <img src="https://via.placeholder.com/200?text=Vimeo" alt="Vimeo">
+      <a href="https://vimeo.com/">Vimeo</a>
+    </div>
+
+    <!-- AI & Productivity -->
+    <div class="link-block" data-theme="ai">
+      <img src="Image_Chatgpt.png" alt="ChatGPT">
+      <a href="https://chatgpt.com/">ChatGPT</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="Image_Copilot.png" alt="Microsoft Copilot">
+      <a href="https://m365.cloud.microsoft/">Microsoft Copilot</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="Image_Gemini.png" alt="Gemini">
+      <a href="https://gemini.google.com/">Gemini</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="Image_Canva.png" alt="Canva">
+      <a href="https://www.canva.com/fr_fr/">Canva</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="https://via.placeholder.com/200?text=Claude" alt="Claude">
+      <a href="https://claude.ai/">Claude</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="https://via.placeholder.com/200?text=Notion" alt="Notion">
+      <a href="https://www.notion.so/">Notion</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="https://via.placeholder.com/200?text=Trello" alt="Trello">
+      <a href="https://trello.com/">Trello</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="https://via.placeholder.com/200?text=Asana" alt="Asana">
+      <a href="https://asana.com/">Asana</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="https://via.placeholder.com/200?text=Monday" alt="Monday.com">
+      <a href="https://monday.com/">Monday.com</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="https://via.placeholder.com/200?text=Slack" alt="Slack">
+      <a href="https://slack.com/">Slack</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="https://via.placeholder.com/200?text=Figma" alt="Figma">
+      <a href="https://www.figma.com/">Figma</a>
+    </div>
+
+    <div class="link-block" data-theme="ai">
+      <img src="https://via.placeholder.com/200?text=Miro" alt="Miro">
+      <a href="https://miro.com/">Miro</a>
+    </div>
+
+    <!-- News & Media -->
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=BBC" alt="BBC">
+      <a href="https://www.bbc.com/">BBC</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=CNN" alt="CNN">
+      <a href="https://www.cnn.com/">CNN</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=NY+Times" alt="New York Times">
+      <a href="https://www.nytimes.com/">New York Times</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=The+Guardian" alt="The Guardian">
+      <a href="https://www.theguardian.com/">The Guardian</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=Reuters" alt="Reuters">
+      <a href="https://www.reuters.com/">Reuters</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=Le+Monde" alt="Le Monde">
+      <a href="https://www.lemonde.fr/">Le Monde</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=Le+Figaro" alt="Le Figaro">
+      <a href="https://www.lefigaro.fr/">Le Figaro</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=Al+Jazeera" alt="Al Jazeera">
+      <a href="https://www.aljazeera.com/">Al Jazeera</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=Forbes" alt="Forbes">
+      <a href="https://www.forbes.com/">Forbes</a>
+    </div>
+
+    <div class="link-block" data-theme="news">
+      <img src="https://via.placeholder.com/200?text=Bloomberg" alt="Bloomberg">
+      <a href="https://www.bloomberg.com/">Bloomberg</a>
+    </div>
+
+    <!-- Education -->
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=Wikipedia" alt="Wikipedia">
+      <a href="https://www.wikipedia.org/">Wikipedia</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=Khan+Academy" alt="Khan Academy">
+      <a href="https://www.khanacademy.org/">Khan Academy</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=Coursera" alt="Coursera">
+      <a href="https://www.coursera.org/">Coursera</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=edX" alt="edX">
+      <a href="https://www.edx.org/">edX</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=Udemy" alt="Udemy">
+      <a href="https://www.udemy.com/">Udemy</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=Duolingo" alt="Duolingo">
+      <a href="https://www.duolingo.com/">Duolingo</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=Skillshare" alt="Skillshare">
+      <a href="https://www.skillshare.com/">Skillshare</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=Codecademy" alt="Codecademy">
+      <a href="https://www.codecademy.com/">Codecademy</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=Brilliant" alt="Brilliant">
+      <a href="https://brilliant.org/">Brilliant</a>
+    </div>
+
+    <div class="link-block" data-theme="education">
+      <img src="https://via.placeholder.com/200?text=MIT+OCW" alt="MIT OpenCourseWare">
+      <a href="https://ocw.mit.edu/">MIT OpenCourseWare</a>
+    </div>
+
+    <!-- Finance -->
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=PayPal" alt="PayPal">
+      <a href="https://www.paypal.com/">PayPal</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=Stripe" alt="Stripe">
+      <a href="https://stripe.com/">Stripe</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=Coinbase" alt="Coinbase">
+      <a href="https://www.coinbase.com/">Coinbase</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=Binance" alt="Binance">
+      <a href="https://www.binance.com/">Binance</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=Venmo" alt="Venmo">
+      <a href="https://venmo.com/">Venmo</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=Mint" alt="Mint">
+      <a href="https://mint.intuit.com/">Mint</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=Robinhood" alt="Robinhood">
+      <a href="https://robinhood.com/">Robinhood</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=E*TRADE" alt="E*TRADE">
+      <a href="https://us.etrade.com/">E*TRADE</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=Chase" alt="Chase">
+      <a href="https://www.chase.com/">Chase</a>
+    </div>
+
+    <div class="link-block" data-theme="finance">
+      <img src="https://via.placeholder.com/200?text=Wells+Fargo" alt="Wells Fargo">
+      <a href="https://www.wellsfargo.com/">Wells Fargo</a>
+    </div>
+
+    <!-- Gaming -->
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=Steam" alt="Steam">
+      <a href="https://store.steampowered.com/">Steam</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=Epic+Games" alt="Epic Games">
+      <a href="https://www.epicgames.com/">Epic Games</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=Xbox" alt="Xbox">
+      <a href="https://www.xbox.com/">Xbox</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=PlayStation" alt="PlayStation">
+      <a href="https://www.playstation.com/">PlayStation</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=Nintendo" alt="Nintendo">
+      <a href="https://www.nintendo.com/">Nintendo</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=Roblox" alt="Roblox">
+      <a href="https://www.roblox.com/">Roblox</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=Minecraft" alt="Minecraft">
+      <a href="https://www.minecraft.net/">Minecraft</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=IGN" alt="IGN">
+      <a href="https://www.ign.com/">IGN</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=GameSpot" alt="GameSpot">
+      <a href="https://www.gamespot.com/">GameSpot</a>
+    </div>
+
+    <div class="link-block" data-theme="gaming">
+      <img src="https://via.placeholder.com/200?text=Battle.net" alt="Battle.net">
+      <a href="https://www.blizzard.com/">Battle.net</a>
+    </div>
+
+    <!-- Travel -->
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=Booking.com" alt="Booking.com">
+      <a href="https://www.booking.com/">Booking.com</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=Airbnb" alt="Airbnb">
+      <a href="https://www.airbnb.com/">Airbnb</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=Expedia" alt="Expedia">
+      <a href="https://www.expedia.com/">Expedia</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=TripAdvisor" alt="TripAdvisor">
+      <a href="https://www.tripadvisor.com/">TripAdvisor</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=Kayak" alt="Kayak">
+      <a href="https://www.kayak.com/">Kayak</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=Skyscanner" alt="Skyscanner">
+      <a href="https://www.skyscanner.com/">Skyscanner</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=Hotels.com" alt="Hotels.com">
+      <a href="https://www.hotels.com/">Hotels.com</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=VRBO" alt="VRBO">
+      <a href="https://www.vrbo.com/">VRBO</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=Google+Maps" alt="Google Maps">
+      <a href="https://maps.google.com/">Google Maps</a>
+    </div>
+
+    <div class="link-block" data-theme="travel">
+      <img src="https://via.placeholder.com/200?text=Uber" alt="Uber">
+      <a href="https://www.uber.com/">Uber</a>
+    </div>
+
+    <!-- Email & Cloud -->
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=Gmail" alt="Gmail">
+      <a href="https://mail.google.com/">Gmail</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=Outlook" alt="Outlook">
+      <a href="https://outlook.live.com/">Outlook</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=Yahoo+Mail" alt="Yahoo Mail">
+      <a href="https://mail.yahoo.com/">Yahoo Mail</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=ProtonMail" alt="ProtonMail">
+      <a href="https://proton.me/mail">ProtonMail</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=Google+Drive" alt="Google Drive">
+      <a href="https://drive.google.com/">Google Drive</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=Dropbox" alt="Dropbox">
+      <a href="https://www.dropbox.com/">Dropbox</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=OneDrive" alt="OneDrive">
+      <a href="https://onedrive.live.com/">OneDrive</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=iCloud" alt="iCloud">
+      <a href="https://www.icloud.com/">iCloud</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=Box" alt="Box">
+      <a href="https://www.box.com/">Box</a>
+    </div>
+
+    <div class="link-block" data-theme="email">
+      <img src="https://via.placeholder.com/200?text=WeTransfer" alt="WeTransfer">
+      <a href="https://wetransfer.com/">WeTransfer</a>
+    </div>
+
   </div>
-  
-  <div class="link-block">
- <img src="Image_Apple.png" class="top-right" alt="Apple">
- <a href="https://www.apple.com/" class="top-right">This is the link for Apple</a>
- </div> 
- 
-  <div class="link-block">
- <img src="Image_Google_Support.png" class="top-right" alt="Google_Support">
- <a href="https://support.google.com/" class="top-right">This is the link for Google Support</a>
- </div>
- 
-  <div class="link-block">
- <img src="Image_Google_Docs.png" class="top-right" alt="Google_Docs">
- <a href="https://docs.google.com/document/u/0/" class="top-right">This is the link for Google docs</a>
- </div>
- 
-  <div class="link-block">
- <img src="Image_Cloudfare.png" class="top-right" alt="Cloudfare">
- <a href="https://www.cloudflare.com/" class="top-right">This is the link for Cloudfare</a>
- </div>
- 
-  <div class="link-block">
- <img src="Image_Google_Maps.png" class="top-right" alt="Google_Maps">
- <a href="https://www.google.com/maps" class="top-right">This is the link for Google Maps</a>
- </div>
- 
-  <div class="link-block">
- <img src="Image_Opera.png" class="top-right" alt="Opera">
- <a href="https://www.opera.com/fr" class="top-right">This is the link for Opera</a>
- </div>
- 
-  <div class="link-block">
- <img src="Image_Dropbox.png" class="top-right" alt="Dropbox">
- <a href="https://www.dropbox.com/" class="top-right">This is the link for Dropbox</a>
- </div>
-  </div> <!-- End of .link-container -->
+
+  <script>
+    function filterLinks(theme) {
+      const blocks = document.querySelectorAll('.link-block');
+      blocks.forEach(block => {
+        if (theme === 'all' || block.dataset.theme === theme) {
+          block.style.display = 'block';
+        } else {
+          block.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
